@@ -25,11 +25,11 @@ CREATE TABLE movies(
   title VARCHAR(50) NOT NULL,
   description TEXT NOT NULL,
   release_year INT NOT NULL,
-  poster TEXT NOT NULL,
+  poster TEXT NOT NULL
 );
 
 CREATE TABLE categories(
-  ID SERIAL NOT NULL PRIMARY KEY
+  ID SERIAL NOT NULL PRIMARY KEY,
   name VARCHAR(50),
   description TEXT
 );
@@ -37,7 +37,7 @@ CREATE TABLE categories(
 CREATE TABLE movies_categories(
   movie_id INT,
   category_id INT,
-  FOREIGN KEY (movie_id) REFERENCES movies(ID) ON DELETE CASCADE
+  FOREIGN KEY (movie_id) REFERENCES movies(ID) ON DELETE CASCADE,
   FOREIGN KEY (category_id) REFERENCES categories(ID) ON DELETE CASCADE 
 );
 
