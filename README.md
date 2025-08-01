@@ -49,53 +49,53 @@ Pronto, as rotas já estão funcionando e podem ser testadas com a extensão Thu
 
 ### GET
 
-- /api/movies
+#### /api/movies
 retorna todos os filmes
 
-- /api/movies/:id
+#### /api/movies/:id
 retorna apenas os dados do filme com tal id
 
-- /api/movies/:id/categories
+#### /api/movies/:id/categories
 retorna as categorias do filme com tal id
 
-- /api/categories
+#### /api/categories
 retorna todas as categorias
 
-- /api/categories/:id
+#### /api/categories/:id
 retorna apenas os dados da categoria com tal id
 
-- /api/categories/:id/movies
+#### /api/categories/:id/movies
 retorna os filmes que são daquela categoria
 
-- /api/releases
+#### /api/releases
 retorna, sem repetições, todos os anos de lançamentos dos filmes no banco de dados
 
-- /api/releases/:year
+#### /api/releases/:year
 retorna todos os filmes que foram lançados naquele ano
 
-- /api/busca/:string
+#### /api/busca/:string
 retorna filmes que contenham a string no título
 
 ### POST
 
-- /api/categories/add
+#### /api/categories/add
 recebe {name, description} e adiciona uma nova categoria
 
-- /api/movies/add
+#### /api/movies/add
 recebe {title, description, release_year, poster, category_ids} e adiciona um novo filme, e também associa ele às suas categorias
 
 ### PUT
 
-- /api/movies/:id
+#### /api/movies/:id
 recebe {title, description, release_year, poster, categories} e atualiza os dados daquele filme
 
-- /api/categories/:id
+#### /api/categories/:id
 recebe {name, description} e atualiza aquela categoria
 
 ### DELETE
 
-- /api/movies/:id
+#### /api/movies/:id
 deleta o filme com aquele id
 
-- /api/categories/:id
+#### /api/categories/:id
 deleta a categoria com aquele id
