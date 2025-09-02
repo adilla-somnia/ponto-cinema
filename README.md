@@ -1,24 +1,24 @@
 # ponto-cinema
+## How to Use
+### Installation
 
-## Como Utilizar
+- Open a terminal inside the project folder and run the following commands:
 
-### Instalação
+1. npm install
+2. npm install pg
+3. npm install dotenv
+4. npm install cors
+5. npm install express
 
-- Abra o terminal dentro da pasta do projeto e insira os seguintes comandos:
-    1. npm install
-    2. npm install pg
-    3. npm install dotenv
-    4. npm install cors
-    5. npm install express
+- Go to NeonDB and follow these steps:
 
-- Entre no NeonDB e siga esses passos:
-  1. Entre ou crie uma conta
-  2. Crie um novo projeto
-  3. Na aba 'Overview' clique em 'Connect'
-  4. Mude 'Connection String' para 'Parameters only'
-  5. Copie tudo e cole dentro do arquivo .env
-  6. Salve o arquivo
-  7. Vá para a aba SQL Editor e cole o seguinte comando:
+1. Sign in or create an account
+2. Create a new project
+3. In the Overview tab, click on Connect
+4. Change Connection String to Parameters only
+5. Copy everything and paste it into your .env file
+6. Save the file
+7. Go to the SQL Editor tab and paste the following commands:
 
 CREATE TABLE movies(
   ID SERIAL NOT NULL PRIMARY KEY,
@@ -41,61 +41,58 @@ CREATE TABLE movies_categories(
   FOREIGN KEY (category_id) REFERENCES categories(ID) ON DELETE CASCADE 
 );
 
-  8. Clique em RUN.
+8. Click RUN.
 
-Pronto, as rotas já estão funcionando e podem ser testadas com a extensão Thunder Client do VSCode, ou outras se desejar.
+That's it! The routes are now working and can be tested using the Thunder Client extension in VSCode, or any other tool of your choice.
 
-## Rotas
+## Routes
 
 ### GET
-
 #### /api/movies
-retorna todos os filmes
+Returns all movies
 
 #### /api/movies/:id
-retorna apenas os dados do filme com tal id
+Returns data for the movie with the specified ID
 
-#### /api/movies/:id/categories
-retorna as categorias do filme com tal id
+####/api/movies/:id/categories
+Returns the categories of the movie with the specified ID
 
 #### /api/categories
-retorna todas as categorias
+Returns all categories
 
 #### /api/categories/:id
-retorna apenas os dados da categoria com tal id
+Returns data for the category with the specified ID
 
 #### /api/categories/:id/movies
-retorna os filmes que são daquela categoria
+Returns all movies under the specified category
 
 #### /api/releases
-retorna, sem repetições, todos os anos de lançamentos dos filmes no banco de dados
+Returns all unique release years of the movies in the database
 
-#### /api/releases/:year
-retorna todos os filmes que foram lançados naquele ano
+####/api/releases/:year
+Returns all movies released in the specified year
 
 #### /api/busca/:string
-retorna filmes que contenham a string no título
+Returns movies that contain the string in their title
 
 ### POST
-
 #### /api/categories/add
-recebe {name, description} e adiciona uma nova categoria
+Accepts {name, description} and adds a new category
 
 #### /api/movies/add
-recebe {title, description, release_year, poster, category_ids} e adiciona um novo filme, e também associa ele às suas categorias
+Accepts {title, description, release_year, poster, category_ids} and adds a new movie, also linking it to its categories
 
 ### PUT
-
 #### /api/movies/:id
-recebe {title, description, release_year, poster, categories} e atualiza os dados daquele filme
+Accepts {title, description, release_year, poster, categories} and updates the movie with the given ID
 
 #### /api/categories/:id
-recebe {name, description} e atualiza aquela categoria
+Accepts {name, description} and updates the category with the given ID
 
 ### DELETE
-
-#### /api/movies/:id
-deleta o filme com aquele id
+####/api/movies/:id
+Deletes the movie with the given ID
 
 #### /api/categories/:id
-deleta a categoria com aquele id
+Deletes the category with the given ID
+
